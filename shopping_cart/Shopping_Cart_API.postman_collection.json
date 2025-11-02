@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "shopping-cart-api",
+		"name": "Shopping Cart API",
+		"description": "Complete API collection for Shopping Cart System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "book_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "album_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "license_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "cart_id",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "List Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/",
+							"host": ["{{base_url}}"],
+							"path": ["books", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Book",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Clean Code\",\n    \"author\": \"Robert C. Martin\",\n    \"number_of_pages\": 464,\n    \"price\": \"42.50\",\n    \"weight\": \"0.800\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/books/",
+							"host": ["{{base_url}}"],
+							"path": ["books", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/{{book_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["books", "{{book_id}}", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"method": "PATCH",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\": \"39.99\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/books/{{book_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["books", "{{book_id}}", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/books/{{book_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["books", "{{book_id}}", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Music Albums",
+			"item": [
+				{
+					"name": "List Music Albums",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/music-albums/",
+							"host": ["{{base_url}}"],
+							"path": ["music-albums", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Music Album",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"artist\": \"The Beatles\",\n    \"title\": \"Abbey Road\",\n    \"number_of_tracks\": 17,\n    \"price\": \"15.99\",\n    \"weight\": \"0.100\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/music-albums/",
+							"host": ["{{base_url}}"],
+							"path": ["music-albums", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Music Album",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/music-albums/{{album_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["music-albums", "{{album_id}}", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Music Album",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/music-albums/{{album_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["music-albums", "{{album_id}}", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Software Licenses",
+			"item": [
+				{
+					"name": "List Software Licenses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/software-licenses/",
+							"host": ["{{base_url}}"],
+							"path": ["software-licenses", ""]
+						}
+					}
+				},
+				{
+					"name": "Create Software License",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"IntelliJ IDEA Professional\",\n    \"price\": \"199.00\",\n    \"license_key\": \"ABC-123-XYZ\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/software-licenses/",
+							"host": ["{{base_url}}"],
+							"path": ["software-licenses", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Software License",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/software-licenses/{{license_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["software-licenses", "{{license_id}}", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart Management",
+			"item": [
+				{
+					"name": "Create Cart",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", ""]
+						}
+					}
+				},
+				{
+					"name": "List Carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", ""]
+						}
+					}
+				},
+				{
+					"name": "Get Cart Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", ""]
+						},
+						"description": "Returns cart with total_price, total_weight, and items_count"
+					}
+				},
+				{
+					"name": "Delete Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Cart Operations",
+			"item": [
+				{
+					"name": "Add Book to Cart",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_type\": \"book\",\n    \"product_id\": \"{{book_id}}\",\n    \"quantity\": 2\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/add_item/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "add_item", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Music Album to Cart",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_type\": \"music_album\",\n    \"product_id\": \"{{album_id}}\",\n    \"quantity\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/add_item/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "add_item", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Software License to Cart",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_type\": \"software_license\",\n    \"product_id\": \"{{license_id}}\",\n    \"quantity\": 1\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/add_item/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "add_item", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Item Quantity",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_type\": \"book\",\n    \"product_id\": \"{{book_id}}\",\n    \"quantity\": 5\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/update_item/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "update_item", ""]
+						}
+					}
+				},
+				{
+					"name": "Remove Item from Cart",
+					"request": {
+						"method": "POST",
+						"header": [{"key": "Content-Type", "value": "application/json"}],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_type\": \"book\",\n    \"product_id\": \"{{book_id}}\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/remove_item/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "remove_item", ""]
+						}
+					}
+				},
+				{
+					"name": "Clear Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "{{base_url}}/carts/{{cart_id}}/clear/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "{{cart_id}}", "clear", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Recommendation System",
+			"item": [
+				{
+					"name": "Analyze Product Sequences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/analyze_sequences/",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "analyze_sequences", ""]
+						},
+						"description": "Returns most common product added after each product"
+					}
+				},
+				{
+					"name": "Get Product Recommendations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/recommendations/?product_id={{book_id}}&limit=5",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "recommendations", ""],
+							"query": [
+								{"key": "product_id", "value": "{{book_id}}"},
+								{"key": "limit", "value": "5"}
+							]
+						},
+						"description": "Get products commonly added after specified product"
+					}
+				},
+				{
+					"name": "Frequently Bought Together",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/carts/frequently_bought_together/?min_frequency=2",
+							"host": ["{{base_url}}"],
+							"path": ["carts", "frequently_bought_together", ""],
+							"query": [
+								{"key": "min_frequency", "value": "2"}
+							]
+						},
+						"description": "Get product pairs that appear together frequently"
+					}
+				}
+			]
+		}
+	]
+}
