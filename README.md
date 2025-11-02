@@ -91,11 +91,6 @@ All solutions are designed with:
 - **Clear documentation** for easy understanding
 - **Real-world applicability** for production environments
 
-## Contact
-
-For any questions or clarifications about this submission, please contact:
-- **Email:** [Your email]
-- **GitHub:** [Your GitHub profile]
 
 ---
 
